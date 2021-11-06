@@ -1,0 +1,8 @@
+RewriteEngine On
+
+
+RewriteRule ^submit submit.php
+
+
+RewriteRule ^app/(.*) appview.php?id=$1 [NC,L]
+RewriteRule ^app appview.php [NC,L]

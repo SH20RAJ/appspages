@@ -1,0 +1,17 @@
+
+
+.logo,.title{
+    text-align: center;
+    margin: 10px;
+}
+.decription{
+    text-align: justify;
+}
+.title{
+    font-size: 40px;
+    font-weight: 700;
+}
+.screenshot{
+    height: 400px;
+    margin: 4px;
+}

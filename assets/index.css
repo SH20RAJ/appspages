@@ -1,0 +1,49 @@
+
+body{
+    background: rgb(203, 245, 245);
+    
+}
+.container{
+    color: rgb(6, 58, 58);
+}
+header{
+    position:static;
+    display: inline-block;
+    top: 4px;
+    left: 4px;
+    width: 100%;
+    margin: 10px;
+    padding: 4px;
+    color: aqua;
+    background: rgb(2, 83, 107);
+    
+}
+header h4 {
+    display: inline;
+}
+.apks{
+    display: inline-block;
+    position: inherit;
+    width: 150px;
+    height: 200px;
+    background: rgb(117, 158, 236);
+    text-align: justify;
+    align-content: center;
+    align-items: center;
+}
+.apk{
+    
+}
+.links {
+    display: inline-block;
+}
+.links a{
+    text-decoration: dotted;
+    background: aqua;
+    padding: 5px;
+    margin: 5px;
+    font-weight: 600;
+    border-radius: 2px;
+    
+
+}
