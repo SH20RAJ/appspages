@@ -28,19 +28,22 @@ $row = mysqli_fetch_array($result) ;
         </div>
     </header>
 
+    <br><br>
     <div class="logo">
         <img src="<?php echo $row['ap_logo_url'] ?>" alt="" srcset="">
-    </div>
+    </div><br><br>
 
     <div class="title">
         <?php echo $row['ap_name'] ?>
-    </div>
+    </div><br><br>
 
     <div class="description">
     <?php echo nl2br($row['ap_description'])?>
-    </div>
+    </div><br><br>
 
+    
     <div class="screenshots">
+        <h3>Screenshots </h3>
         <pre>
         <?php 
         $sc = explode('|', $row['ap_screenshots']);
@@ -51,6 +54,7 @@ $row = mysqli_fetch_array($result) ;
         ?>
         </pre>
     </div>
+    <br><br>
 
 </div>    
 </body>
