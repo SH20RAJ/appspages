@@ -8,6 +8,21 @@
     text-align: justify;
     
 }
+header{
+    position:static;
+    display: inline-block;
+    width: 100%;
+    padding: 4px;
+    color: aqua;
+    background: rgb(2, 83, 107);
+    
+}
+header h4 {
+    display: inline;
+}
+.links {
+    display: inline-block;
+}
 .title{
     font-size: 40px;
     font-weight: 700;

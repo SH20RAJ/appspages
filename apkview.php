@@ -22,10 +22,12 @@ $row = mysqli_fetch_array($result) ;
 
 <body>
 <header>
-<h4>Appspages</h4>
+<h4 class="bttn-material-flat bttn-md bttn-primary" style="color:aqua;background:rgb(2, 83, 107);">
+<span style="color:hotpink">Apps</span>pages
+</h4>
     <div class="links">
-        <a href="log/">Log</a>
-        <a href="submit/">Submit APK</a>
+        <a class="bttn-material-flat bttn-md bttn-primary" href="log/">Log</a>
+        <a class="bttn-material-flat bttn-md bttn-primary" href="submit/">Submit APK</a>
     </div>
 </header>
     <div class="container">
@@ -101,7 +103,7 @@ $row = mysqli_fetch_array($result) ;
 
 </div>  
 <div class="footer">
-    <a class="a" href="">@AppsPages</a>
+    <a class="a" href="../">@AppsPages</a>
 </div>         
 </body>
 
