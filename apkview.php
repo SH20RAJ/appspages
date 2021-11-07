@@ -17,8 +17,6 @@ $row = mysqli_fetch_array($result) ;
     <link rel="stylesheet" href="../assets/bttn.css">
     <link rel="stylesheet" href="../assets/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/appview.css">
-    <link rel="stylesheet" href="../assets/index.css">
-
     <link rel="shortcut icon" href="<?php echo $row['ap_logo_url'] ?>" type="image/x-icon">
 </head>
 
