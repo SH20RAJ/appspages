@@ -6,6 +6,7 @@
 }
 .decription{
     text-align: justify;
+    
 }
 .title{
     font-size: 40px;
@@ -22,12 +23,36 @@ a{
     text-align: center;
     margin: 20px;
 }
-.sccon{
-    background: rgb(255, 248, 235);
+.sscon{
+    
 }
 .center{
     text-align: center;
 }
+.details{
+    text-align: center;
+}
 .details a{
+    margin: 20px;
+    display: inline-block;
+}
+
+.footer{
+    display: inline-block;
+    width: 100%;
+    background: rgb(6, 38, 56);
+    height: 400px;
+    margin: 0;
+    color: aliceblue;
+    text-align: center;
+    
+}
+.footer .a{
+    font-size: 20px;
+    vertical-align: middle;
+    color:white;
+}
+.fi img{
+    width: 100%;
     margin: 20px;
 }

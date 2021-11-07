@@ -9,10 +9,7 @@ body{
 header{
     position:static;
     display: inline-block;
-    top: 4px;
-    left: 4px;
     width: 100%;
-    margin: 10px;
     padding: 4px;
     color: aqua;
     background: rgb(2, 83, 107);
