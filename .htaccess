@@ -4,5 +4,5 @@ RewriteEngine On
 RewriteRule ^submit submit.php
 
 
-RewriteRule ^app/(.*) appview.php?id=$1 [NC,L]
-RewriteRule ^app appview.php [NC,L]
+RewriteRule ^apk/(.*) apkview.php?id=$1 [NC,L]
+RewriteRule ^apk apkview.php [NC,L]
