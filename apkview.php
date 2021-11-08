@@ -18,16 +18,18 @@ $row = mysqli_fetch_array($result) ;
     <link rel="stylesheet" href="../assets/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/appview.css">
     <link rel="shortcut icon" href="<?php echo $row['ap_logo_url'] ?>" type="image/x-icon">
+    
 </head>
 
 <body>
+<script src="../assets/autotopbar.js"></script>
 <header>
 <h4 class="bttn-material-flat bttn-md bttn-primary" style="color:aqua;background:rgb(2, 83, 107);">
 <span style="color:hotpink">Apps</span>pages
 </h4>
     <div class="links">
-        <a class="bttn-material-flat bttn-md bttn-primary" href="log/">Log</a>
-        <a class="bttn-material-flat bttn-md bttn-primary" href="submit/">Submit APK</a>
+        <a class="bttn-material-flat bttn-md bttn-primary" href="../log/">Log</a>
+        <a class="bttn-material-flat bttn-md bttn-primary" href="../submit/">Submit APK</a>
     </div>
 </header>
     <div class="container">
@@ -73,6 +75,11 @@ $row = mysqli_fetch_array($result) ;
             </a>
 
         </p>
+        
+        <div class="fi">
+            <img src="<?php echo $row['ap_featured']?>" alt="" srcset="">
+        </div>
+
         <div class="collapse" id="desc">
             <div class="card card-body">
 
@@ -81,9 +88,7 @@ $row = mysqli_fetch_array($result) ;
                 </div>
             </div>
         </div>
-        <div class="fi">
-            <img src="<?php echo $row['ap_featured']?>" alt="" srcset="">
-        </div>
+        
 
 
                 <br><br>
