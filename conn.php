@@ -4,8 +4,8 @@ session_start();
 $conn = mysqli_connect('remotemysql.com','QaHBRkrLkM','fBL0a9PGLH','QaHBRkrLkM');
 //$conn = mysqli_connect('localhost','shr','deep','appspages');
 
-$sitename = "BooksD - Books Pdf Downloading.....";
-$siteurl = "http://localhost/booksd/";
+$sitename = "AppsPages";
+$siteurl = "";
 
 
 if(isset($_SESSION['username'])){
