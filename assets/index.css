@@ -3,7 +3,7 @@ body{
     background: rgb(203, 245, 245);
     
 }
-.container{
+.container2{
     color: rgb(6, 58, 58);
 }
 header{
@@ -18,18 +18,25 @@ header{
 header h4 {
     display: inline;
 }
+.recent{
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+
+}
 .apks{
     display: inline-block;
-    position: inherit;
-    width: 150px;
-    height: 200px;
-    background: rgb(117, 158, 236);
-    text-align: justify;
-    align-content: center;
-    align-items: center;
+    position: relative;
+    background: rgb(185, 205, 241);
+    margin: 10px;
+    border: 2px solid red;
+    padding: 10px;
+    width: 200px;
+    height: 300px;
 }
-.apk{
-    
+.apks .logo img{
+    width: 100px;
+    height: 180px;
 }
 .links {
     display: inline-block;

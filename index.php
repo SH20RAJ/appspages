@@ -14,7 +14,7 @@ include "conn.php";
     <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
-<div class="container">
+<div class="container2">
     <header>
         <?php include "assets/header.php" ?>
         <script src='assets/jquery.min.js'></script>
@@ -24,50 +24,29 @@ include "conn.php";
     <hr>
     <section class="recent">
         <h5>Recent Apps</h5>
-        <div class="apks">
-            <div class="apk">
-
-            </div>
-            
-        </div>
-        <div class="apks">
-            <div class="apk">
-
-            </div>
-            
-        </div>
-        <div class="apks">
-            <div class="apk">
-
-            </div>
-            
-        </div>
-        <div class="apks">
-            <div class="apk">
-
-            </div>
-            
-        </div>
-        <div class="apks">
-            <div class="apk">
-
-            </div>
-            
-        </div>
-    </section>
-
-</div>    
-<div class="text">
+        
 <?php
 $sql = "SELECT * FROM ap_apks ORDER BY ap_id desc";
 $result = $conn->query($sql); 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_array()) {
-      echo $row['ap_name'];
+      echo '<div class="apks">
+      <div class="logo">
+      <img src="'.$row['ap_featured'].'"> </div>
+      <div class="ap_name">'.$row['ap_name'].'</div>
+            
+        </div>
+        ';
   }
  } else {
  echo "0 results found !!!!! ";
   }?>
+        
+    </section>
+
+</div>    
+<div class="text">
+
 </div>
 
 <?php include "assets/footer.html"?>
