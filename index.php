@@ -16,11 +16,10 @@ include "conn.php";
 <body>
 <div class="container">
     <header>
-        <h4>Appspages</h4>
-        <div class="links">
-            <a href="log/">Log</a>
-            <a href="submit/">Submit APK</a>
-        </div>
+        <?php include "assets/header.php" ?>
+        <script src='assets/jquery.min.js'></script>
+        <script src='assets/bootstrap.min.js'></script>
+        <script  src="assets/nav/script.js"></script>
     </header>
     <hr>
     <section class="recent">
