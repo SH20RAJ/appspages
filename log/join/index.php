@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - Animated Login Form</title>
-  <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Stackfindover: Sign in</title>
+  <title>AppsPages - Join</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -105,8 +95,4 @@
   </div>
 </body>
 
-</html>
-<!-- partial -->
-  
-</body>
 </html>
