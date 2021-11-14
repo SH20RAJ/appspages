@@ -4,5 +4,5 @@ RewriteEngine On
 RewriteRule ^apk/(.*) apkview.php?id=$1 [NC,L]
 RewriteRule ^apk apkview.php [NC,L]
 
-ErrorDocument 404 404.html
-ErrorDocument 500 404.html
+ErrorDocument 404 https://appspages.herokuapp.com/404.html
+ErrorDocument 500 https://appspages.herokuapp.com/404.html
