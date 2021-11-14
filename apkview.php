@@ -45,7 +45,7 @@ $row = mysqli_fetch_array($result) ;
         </div>
         <br>
         <div class="uploader center"><a
-                href="../tag/<?php echo $row['ap_uploader']?>"><?php echo $row['ap_uploader']?></a></div>
+                href="../tag/<?php echo $row['user']?>"><?php echo $row['user']?></a></div>
         <br><br>
 
         <div class="download">

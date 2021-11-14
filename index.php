@@ -28,19 +28,31 @@ include "conn.php";
 <?php
 $sql = "SELECT * FROM ap_apks ORDER BY ap_id desc";
 $result = $conn->query($sql); 
-if ($result->num_rows > 0) {
+
+if (mysqli_num_rows($result) > 0) {
+    echo '<div class="row" style="text-align:center;">';
     while($row = $result->fetch_array()) {
-      echo '<div class="apks">
-      <div class="logo">
-      <img src="'.$row['ap_featured'].'"> </div>
-      <div class="ap_name">'.$row['ap_name'].'</div>
-            
-        </div>
+      echo '
+
+<div class="col-sm-4">
+<div class="card" style="max-width: 18rem;min-width: 18rem;">
+  <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
+  <div class="card-body">
+    <h5 class="card-title">'.$row['ap_name'].'</h5>
+    <p class="card-text"></p>
+    <a href="apk/'.$row['ap_id'].'" class="btn btn-success">Install</a>
+  </div>
+</div>
+</div>
+
         ';
   }
+  echo "</div>";
  } else {
  echo "0 results found !!!!! ";
-  }?>
+  }
+
+?>
         
     </section>
 

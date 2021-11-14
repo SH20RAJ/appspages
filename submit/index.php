@@ -30,7 +30,13 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method="post" action="submit.php">
 				<span class="contact100-form-title">
-					Upload Your App
+					<?php 
+					session_start(); 
+					if(!isset($_SESSION['user'])){
+						echo "Login to Upload Your App";
+						}else{
+						echo " Upload Your App - ".$_SESSION['user'];
+						} ?>
 				</span>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
@@ -58,7 +64,10 @@
 
 
 				<div class="wrap-input100">
-					<span class="label-input100">Enter App Download URL</span>
+					<span class="label-input100">Enter App Download URL</span> 
+					<a href="https://codexdindia.blogspot.com/2021/11/free-unlimited-file-hosting-video-hosting-on-siasky-net.html">
+						Get Free Hosting
+					</a>
 					<input class="input100" type="text" name="ap_link" placeholder="https://drive.google.com/my-app">
 				</div>
 
