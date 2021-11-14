@@ -12,6 +12,7 @@ include "conn.php";
     <title>Appspages - Free Apps Landing Pages - Share, Upload, Download</title>
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link rel="stylesheet" href="assets/index.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
 <div class="container2">
