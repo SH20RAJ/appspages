@@ -23,10 +23,10 @@ include "conn.php";
     </header>
     <hr>
     <section class="recent">
-        <h5>Recent Apps</h5>
+        <h5>Recent Apps by Users Globally</h5>
         
 <?php
-$sql = "SELECT * FROM ap_apks ORDER BY ap_id desc";
+$sql = "SELECT * FROM ap_apks ORDER BY ap_id desc limit 100";
 $result = $conn->query($sql); 
 
 if (mysqli_num_rows($result) > 0) {
