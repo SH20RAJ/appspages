@@ -30,8 +30,9 @@ if (mysqli_num_rows($result) > 0) {
   <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
   <div class="card-body">
     <h5 class="card-title">'.$row['ap_name'].'</h5>
-    <p class="card-text"></p>
-    <a href="#" class="btn btn-danger">Delete</a>
+    <p class="card-text">lorem ipsum</p>
+    <a href="delete.php?id='.$row['ap_id'].'" class="btn btn-danger">Delete</a>
+    <a href="../apk/'.$row['ap_id'].'" class="btn btn-success">Open</a>
   </div>
 </div>
 </div>
@@ -50,7 +51,11 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
 
-
+<hr>
+<footer>
+  <h4>Edit feature may be available soon...</h4>
+</footer>
 </div>
+
 </body>
 </html>

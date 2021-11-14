@@ -1,7 +1,7 @@
 <?php
 include '../conn.php';
-session_start();
-if(isset($_SESSION['username'])){
+
+if(isset($_SESSION['id'])){
   echo "Done";
 }else{
   echo "Not Done";
@@ -9,10 +9,10 @@ if(isset($_SESSION['username'])){
 }
 
 $ap_name = $_POST["ap_name"];
-$ap_uploader = "SHR";
+$ap_uploader = $_SESSION['id'];
 $ap_custom_html="";
 $sql = "INSERT INTO ap_apks (ap_id, ap_name, apk_link, ap_logo_url, ap_featured, 
-ap_screenshots, ap_description, ap_tag, ap_version, ap_uploader,
+ap_screenshots, ap_description, ap_tag, ap_version, user,
  ap_timestamp, ap_youtube, ap_website, 
 ap_custom_html, ap_likes, ap_dislikes, ap_hearts, ap_size) 
 VALUES (NULL, 
