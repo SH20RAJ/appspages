@@ -64,8 +64,8 @@
 
 
 				<div class="wrap-input100">
-					<span class="label-input100">Enter App Download URL</span> 
-					<a href="https://codexdindia.blogspot.com/2021/11/free-unlimited-file-hosting-video-hosting-on-siasky-net.html">
+					<span class="label-input100">Enter App Download URL</span> | 
+					<a target="_blank" rel="dofollow" style="text-decoration:underline;" href="https://codexdindia.blogspot.com/2021/11/free-unlimited-file-hosting-video-hosting-on-siasky-net.html">
 						Get Free Hosting
 					</a>
 					<input class="input100" type="text" name="ap_link" placeholder="https://drive.google.com/my-app">
