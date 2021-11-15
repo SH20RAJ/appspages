@@ -47,7 +47,13 @@ content="<?php echo nl2br($row['ap_description'])?>">
         </div>
         <br>
         <div class="uploader center"><a
-                href="../tag/<?php echo $row['user']?>"><?php echo $row['user']?></a></div>
+                href="../user/<?php echo $row['user']?>"><?php 
+                $sql3 = "SELECT * FROM ap_users where ur_id =".$row['user']."";
+                $result3 = mysqli_query($conn,$sql3);
+                $row3 = mysqli_fetch_array($result3);
+                echo $row3['username'];
+                
+                ?></a></div>
         <br><br>
 
         <div class="download">

@@ -31,7 +31,7 @@ $sql = "SELECT * FROM ap_apks ORDER BY ap_id desc limit 100";
 $result = $conn->query($sql); 
 
 if (mysqli_num_rows($result) > 0) {
-    echo '<div class="row" style="text-align:center;">';
+    echo '<div class="row">';
     while($row = $result->fetch_array()) {
       echo '
 
@@ -63,5 +63,6 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 
 <?php include "assets/footer.html"?>
+
 </body>
 </html>

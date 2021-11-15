@@ -1,3 +1,10 @@
+<?php include "conn.php";
+
+if(isset($_GET['id'])){} else{header("location:../");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +17,17 @@
 <body>
 <div class="container">
     <br><br>
-    <h2>Your Apps - AppsPages</h2>
+    <h2><?php 
+                $sql3 = "SELECT * FROM ap_users where ur_id =".$_GET['id']."";
+                $result3 = mysqli_query($conn,$sql3);
+                $row3 = mysqli_fetch_array($result3);
+                echo $row3['username'];
+                
+                ?> - AppsPages</h2>
     <hr><br><br>
 <?php
-include "../conn.php";
-include "../log/loginrequired.php";
 
-$sql = "SELECT * FROM ap_apks where user = ".$_SESSION['id']."";
+$sql = "SELECT * FROM ap_apks where user = ".$_GET['id']."";
 
 $result = mysqli_query($conn,$sql);
 
@@ -29,10 +40,9 @@ if (mysqli_num_rows($result) > 0) {
 <div class="card" style="max-width: 18rem;min-width: 18rem;">
   <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
   <div class="card-body">
-    <a href="../apk/'.$row['ap_id'].'"><h5 class="card-title">'.$row['ap_name'].'</h5></a>
+    <h5 class="card-title">'.$row['ap_name'].'</h5>
     <p class="card-text">AppsPages</p>
-    <a href="delete.php?id='.$row['ap_id'].'" class="btn btn-danger">Delete</a>
-    <a href="edit.php?id='.$row['ap_id'].'" class="btn btn-success">Edit</a>
+    <a href="../apk/'.$row['ap_id'].'" class="btn btn-success">Install</a>
   </div>
 </div>
 </div>

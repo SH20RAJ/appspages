@@ -14,5 +14,6 @@ VALUES (NULL, '".$user."', '".$pass."', '".$name."', '".$email."', '".$bio."', '
 
 if(mysqli_query($conn,$sql)){
     echo "User Registered!";
+    header('location:../log');
 }
 
