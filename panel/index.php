@@ -29,10 +29,10 @@ if (mysqli_num_rows($result) > 0) {
 <div class="card" style="max-width: 18rem;min-width: 18rem;">
   <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
   <div class="card-body">
-    <h5 class="card-title">'.$row['ap_name'].'</h5>
-    <p class="card-text">lorem ipsum</p>
+    <a href="../apk/'.$row['ap_id'].'"><h5 class="card-title">'.$row['ap_name'].'</h5></a>
+    <p class="card-text">AppsPages</p>
     <a href="delete.php?id='.$row['ap_id'].'" class="btn btn-danger">Delete</a>
-    <a href="../apk/'.$row['ap_id'].'" class="btn btn-success">Open</a>
+    <a href="edit.php?id='.$row['ap_id'].'" class="btn btn-success">Edit</a>
   </div>
 </div>
 </div>
