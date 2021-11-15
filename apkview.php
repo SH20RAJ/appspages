@@ -4,6 +4,14 @@ $id = $_GET['id'];
 $sql = 'select * from ap_apks where ap_id = '.$id;
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result) ;
+
+?>
+
+<?php
+//Counting Views
+$views = $row['ap_views']+1;
+$viewsql = "UPDATE ap_apks SET ap_views = ".$views." where ap_id = ".$id."";
+mysqli_query($conn,$viewsql);
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +84,7 @@ content="<?php echo nl2br($row['ap_description'])?>">
                 Screenshots
             </a>
             <a class="bttn-float bttn-md bttn-primary">
-                Downloads : <?php echo $row['ap_downloads']?>
+                Views : <?php echo $row['ap_views']?>
             </a>
             <a class="bttn-jelly bttn-md bttn-primary" style="border-radius:4px;">
                 <?php echo $row['ap_tag']?>
@@ -122,6 +130,7 @@ content="<?php echo nl2br($row['ap_description'])?>">
 
 </div>      
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=619204ca557e30001202fd90&product=sop' async='async'></script>   
+
 </body>
 
 </html>

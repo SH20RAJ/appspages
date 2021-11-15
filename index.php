@@ -13,8 +13,10 @@ include "conn.php";
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link rel="stylesheet" href="assets/index.css">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    
 </head>
 <body>
+  <script src="assets/autotopbar.js"></script>
 <div class="container">
     <header>
         <?php include "assets/header.php" ?>
@@ -24,10 +26,44 @@ include "conn.php";
     </header>
     <hr>
     <section class="recent"><br>
-        <h5>Recent Apps by Users Globally</h5><hr><br>
+      <h5>Recent Apps by Users Globally</h5><hr><br>
+            
+    <?php
+    $sql = "SELECT * FROM ap_apks ORDER BY ap_id desc limit 100";
+    $result = $conn->query($sql); 
+
+    if (mysqli_num_rows($result) > 0) {
+        echo '<div class="row">';
+        while($row = $result->fetch_array()) {
+          echo '
+
+    <div class="col-sm-4">
+    <div class="card" style="max-width: 18rem;min-width: 18rem;">
+      <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
+      <div class="card-body">
+        <h5 class="card-title">'.$row['ap_name'].'</h5>
+        <p class="card-text"></p>
+        <a href="apk/'.$row['ap_id'].'" class="btn btn-success">Install</a>
+      </div>
+    </div>
+    </div>
+
+            ';
+      }
+      echo "</div>";
+    } else {
+    echo "0 results found !!!!! ";
+      }
+
+    ?>
+            
+    </section>
+
+    <section class="recent"><br>
+        <h5>Top Apps by Users Globally</h5><hr><br>
         
 <?php
-$sql = "SELECT * FROM ap_apks ORDER BY ap_id desc limit 100";
+$sql = "SELECT * FROM ap_apks ORDER BY ap_views desc limit 100";
 $result = $conn->query($sql); 
 
 if (mysqli_num_rows($result) > 0) {

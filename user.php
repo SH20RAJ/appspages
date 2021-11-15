@@ -15,6 +15,7 @@ if(isset($_GET['id'])){} else{header("location:../");
     <link rel="stylesheet" href="../assets/bootstrap.min.css">
 </head>
 <body>
+<script src="../assets/autotopbar.js"></script>
 <div class="container">
     <br><br>
     <h2><?php 
