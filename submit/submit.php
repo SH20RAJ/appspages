@@ -38,8 +38,7 @@ echo $sql;
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
- 
-  //header('location:index.html');
+  header('location:../panel/');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
