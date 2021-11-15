@@ -1,3 +1,12 @@
+<?php
+include '../conn.php';
+$id = $_GET['id'];
+echo $sql = 'select * from ap_apks where ap_id = '.$id.' and user = '.$_SESSION["id"].'';
+
+$result = mysqli_query($conn,$sql);
+$row = mysqli_fetch_array($result) ;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +39,7 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" method="post" action="">
 				<span class="contact100-form-title">
-					<?php 
-					session_start(); 
+					<?php  
                     include "../log/loginrequired.php";
 					if(!isset($_SESSION['user'])){
 						echo "Login to Upload Your App";
@@ -42,12 +50,12 @@
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">App name *</span>
-					<input class="input100" type="text" name="ap_name" placeholder="Enter your app name">
+					<input class="input100" type="text" name="ap_name" value="<?php echo $row['ap_name'] ?>" placeholder="Enter your app name">
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Enter pakage name *</span>
-					<input class="input100" type="text" name="ap_pakage" placeholder="org.mozilla.firefox">
+					<input  value="<?php echo $row['ap_pakage'] ?>"  class="input100" type="text" name="ap_pakage" placeholder="org.mozilla.firefox">
 				</div>
 				
 
@@ -55,7 +63,7 @@
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">App Logo URL *</span>
-					<input class="input100" type="text" name="ap_logo" placeholder="https://i.imgur.com/pm4alC9.png">
+					<input  value="<?php echo $row['ap_logo'] ?>"  class="input100" type="text" name="ap_logo" placeholder="https://i.imgur.com/pm4alC9.png">
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
