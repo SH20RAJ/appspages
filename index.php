@@ -15,7 +15,7 @@ include "conn.php";
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
-<div class="container2">
+<div class="container">
     <header>
         <?php include "assets/header.php" ?>
         <script src='assets/jquery.min.js'></script>
@@ -23,8 +23,8 @@ include "conn.php";
         <script  src="assets/nav/script.js"></script>
     </header>
     <hr>
-    <section class="recent">
-        <h5>Recent Apps by Users Globally</h5>
+    <section class="recent"><br>
+        <h5>Recent Apps by Users Globally</h5><hr><br>
         
 <?php
 $sql = "SELECT * FROM ap_apks ORDER BY ap_id desc limit 100";
