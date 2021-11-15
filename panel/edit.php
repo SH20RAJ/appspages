@@ -6,39 +6,37 @@ $sql = 'select * from ap_apks where ap_id = '.$id.' and user = '.$_SESSION["id"]
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result) ;
 
-
 if(isset($_POST['ap_name'])){
-    $sql = "INSERT INTO ap_apks (ap_id, ap_name, apk_link, ap_logo_url, ap_featured, 
-    ap_screenshots, ap_description, ap_tag, ap_version, user,
-     ap_timestamp, ap_youtube, ap_website, 
-    ap_custom_html, ap_likes, ap_dislikes, ap_hearts, ap_size) 
-    VALUES (NULL, 
-    '".$ap_name."', 
-    '".$_POST["ap_link"]."',
-    '".$_POST["ap_logo"]."', 
-    '".$_POST["ap_featured"]."', 
-    '".$screenshots."', 
-    '".$_POST["ap_description"]."',
-    '".$_POST["ap_tag"]."', 
-    '".$_POST["ap_version"]."', 
-    '".$ap_uploader."',
-    current_timestamp(), 
-    '".$_POST["ap_youtube"]."', 
-    '".$_POST["ap_website"]."',
-    '".$ap_custom_html."',
-    '0','0','0', 
-    '".$_POST["ap_size"]."')";
-    echo $sql;
-    
-    
-    if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-     
-      //header('location:index.html');
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-    
+    $ap_name = $_POST["ap_name"];
+    $ap_uploader = $_SESSION['id'];
+    $ap_custom_html="";
+    $package = $_POST['package'];
+    $screenshots = str_replace("\n", "|", $_POST["ap_screenshots"]);
+    $sql2 = "UPDATE ap_apks SET 
+    ap_name ='".$ap_name."', 
+    apk_link =  '".$_POST["ap_link"]."', 
+    ap_logo_url = '".$_POST["ap_logo"]."' , 
+    ap_featured = '".$_POST["ap_featured"]."' , 
+    ap_screenshots = '".$screenshots."' , 
+    ap_description =  '".str_replace("'", "`",$_POST["ap_description"] )."', 
+    ap_tag = '".$_POST["ap_tag"]."' , ap_version = '".$_POST["ap_version"]."' , 
+    user = '".$ap_uploader."' ,
+    ap_timestamp = current_timestamp() , 
+    ap_youtube = '".$_POST["ap_youtube"]."' , 
+    ap_website =  '".$_POST["ap_website"]."', 
+    ap_custom_html = '".$ap_custom_html."' , 
+    ap_likes =  '0' , ap_dislikes = '0' , ap_hearts = '0' ,
+    ap_size='".$_POST["ap_size"]."', package = '". $package."'
+    WHERE ap_id = ".$id."
+    ";
+    if ($conn->query($sql2) === TRUE) {
+        echo "Updated successfully";
+       
+        //header('location:index.html');
+      } else {
+        echo "Error: " . $sql2 . "<br>" . $conn->error;
+      }
+
 
 
 }
@@ -92,7 +90,7 @@ if(isset($_POST['ap_name'])){
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Enter package name *</span>
-					<input  value="<?php echo $row['package'] ?>"  class="input100" type="text" name="ap_package" placeholder="org.mozilla.firefox">
+					<input  value="<?php echo $row['package'] ?>"  class="input100" type="text" name="package" placeholder="org.mozilla.firefox">
 				</div>
 				
 
