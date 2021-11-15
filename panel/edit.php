@@ -1,16 +1,53 @@
 <?php
 include '../conn.php';
 $id = $_GET['id'];
-echo $sql = 'select * from ap_apks where ap_id = '.$id.' and user = '.$_SESSION["id"].'';
+$sql = 'select * from ap_apks where ap_id = '.$id.' and user = '.$_SESSION["id"].'';
 
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result) ;
+
+
+if(isset($_POST['ap_name'])){
+    $sql = "INSERT INTO ap_apks (ap_id, ap_name, apk_link, ap_logo_url, ap_featured, 
+    ap_screenshots, ap_description, ap_tag, ap_version, user,
+     ap_timestamp, ap_youtube, ap_website, 
+    ap_custom_html, ap_likes, ap_dislikes, ap_hearts, ap_size) 
+    VALUES (NULL, 
+    '".$ap_name."', 
+    '".$_POST["ap_link"]."',
+    '".$_POST["ap_logo"]."', 
+    '".$_POST["ap_featured"]."', 
+    '".$screenshots."', 
+    '".$_POST["ap_description"]."',
+    '".$_POST["ap_tag"]."', 
+    '".$_POST["ap_version"]."', 
+    '".$ap_uploader."',
+    current_timestamp(), 
+    '".$_POST["ap_youtube"]."', 
+    '".$_POST["ap_website"]."',
+    '".$ap_custom_html."',
+    '0','0','0', 
+    '".$_POST["ap_size"]."')";
+    echo $sql;
+    
+    
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+     
+      //header('location:index.html');
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+
+
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Upload Your App - AppsPages</title>
+	<title>Edit Your App - AppsPages</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -42,9 +79,9 @@ $row = mysqli_fetch_array($result) ;
 					<?php  
                     include "../log/loginrequired.php";
 					if(!isset($_SESSION['user'])){
-						echo "Login to Upload Your App";
+						echo "Login to Edit Your App";
 						}else{
-						echo " Upload Your App - ".$_SESSION['user'];
+						echo " Edit Your App - ".$_SESSION['user'];
 						} ?>
 				</span>
 
@@ -54,8 +91,8 @@ $row = mysqli_fetch_array($result) ;
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Enter pakage name *</span>
-					<input  value="<?php echo $row['ap_pakage'] ?>"  class="input100" type="text" name="ap_pakage" placeholder="org.mozilla.firefox">
+					<span class="label-input100">Enter package name *</span>
+					<input  value="<?php echo $row['package'] ?>"  class="input100" type="text" name="ap_package" placeholder="org.mozilla.firefox">
 				</div>
 				
 
@@ -63,12 +100,12 @@ $row = mysqli_fetch_array($result) ;
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">App Logo URL *</span>
-					<input  value="<?php echo $row['ap_logo'] ?>"  class="input100" type="text" name="ap_logo" placeholder="https://i.imgur.com/pm4alC9.png">
+					<input  value="<?php echo $row['ap_logo_url'] ?>"  class="input100" type="text" name="ap_logo" placeholder="https://i.imgur.com/pm4alC9.png">
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">App Featured Image * </span>
-					<input class="input100" type="text" name="ap_featured" placeholder="i.e. : https://i.imgur.com/pm4alC9.png">
+					<input  value="<?php echo $row['ap_featured'] ?>"  class="input100" type="text" name="ap_featured" placeholder="i.e. : https://i.imgur.com/pm4alC9.png">
 				</div>
 
 
@@ -77,23 +114,24 @@ $row = mysqli_fetch_array($result) ;
 					<a target="_blank" rel="dofollow" style="text-decoration:underline;" href="https://codexdindia.blogspot.com/2021/11/free-unlimited-file-hosting-video-hosting-on-siasky-net.html">
 						Get Free Hosting
 					</a>
-					<input class="input100" type="text" name="ap_link" placeholder="https://drive.google.com/my-app">
+					<input  value="<?php echo $row['apk_link'] ?>"  class="input100" type="text" name="ap_link" placeholder="https://drive.google.com/my-app">
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Description is required">
 					<span class="label-input100">Description</span>
-					<textarea class="input100" name="ap_description" placeholder="Put the description here..."></textarea>
+					<textarea class="input100" name="ap_description" placeholder="Put the description here..."
+                    ><?php echo $row['ap_description']  ?> </textarea>
 				</div>
 
 				<!--Other Details Here-->
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">App Version *</span>
-					<input class="input100" type="text" name="ap_version" placeholder="1.0">
+					<input value="<?php echo $row['ap_version'] ?>" class="input100" type="text" name="ap_version" placeholder="1.0">
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">App Category * </span>
-					<input class="input100" type="text" name="ap_tag" placeholder="Communication">
+					<input value="<?php echo $row['ap_tag'] ?>" class="input100" type="text" name="ap_tag" placeholder="Communication">
 				</div>
 
 				<!--Other Necessary-->
@@ -102,22 +140,22 @@ $row = mysqli_fetch_array($result) ;
 					<textarea class="input100" name="ap_screenshots" placeholder="https://i.imgur.com/IORqLPK.jpg
 https://i.imgur.com/zBTIHbX.jpg
 https://i.imgur.com/DLMqYn3.jpg
-https://i.imgur.com/QfLxm5q.jpg"></textarea>
+https://i.imgur.com/QfLxm5q.jpg"><?php echo str_replace("|", "\n", $row['ap_screenshots']);?></textarea>
 				</div>
 
 				<!--Other Details Here-->
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Size is required">
 					<span class="label-input100">App Size * (In MegaBytes)</span>
-					<input class="input100" type="text" name="ap_size" placeholder="73.2">
+					<input value="<?php echo $row['ap_size'] ?>" class="input100" type="text" name="ap_size" placeholder="73.2">
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100">
 					<span class="label-input100">Website Reference </span>
-					<input class="input100" type="text" name="ap_website" placeholder="https://">
+					<input value="<?php echo $row['ap_website'] ?>" class="input100" type="text" name="ap_website" placeholder="https://">
 				</div>
 				<div class="wrap-input100">
 					<span class="label-input100">YouTube Reference </span>
-					<input class="input100" type="text" name="ap_youtube" placeholder="https://www.youtube.com/watch?v=x74zbmggC-I">
+					<input value="<?php echo $row['ap_youtube'] ?>" class="input100" type="text" name="ap_youtube" placeholder="https://www.youtube.com/watch?v=x74zbmggC-I">
 				</div>
 
 

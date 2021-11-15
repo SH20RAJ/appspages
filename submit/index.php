@@ -45,8 +45,8 @@
 				</div>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Enter pakage name *</span>
-					<input class="input100" type="text" name="ap_pakage" placeholder="org.mozilla.firefox">
+					<span class="label-input100">Enter package name *</span>
+					<input class="input100" type="text" name="package" placeholder="org.mozilla.firefox">
 				</div>
 				
 
