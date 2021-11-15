@@ -63,9 +63,11 @@ if (mysqli_num_rows($result) > 0) {
 
 <hr>
 <footer>
+      <!-- ShareThis BEGIN --><div class="sharethis-inline-reaction-buttons"></div><!-- ShareThis END -->
+
   <h4>More features may be available soon...</h4>
 </footer>
 </div>
-
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=619204ca557e30001202fd90&product=sop' async='async'></script>   
 </body>
 </html>
