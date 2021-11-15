@@ -4,6 +4,9 @@
     text-align: center;
     margin: 10px;
 }
+.logo img{
+ width:100%;
+}
 .decription{
     text-align: justify;
     
