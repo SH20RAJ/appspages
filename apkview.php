@@ -117,6 +117,9 @@ content="<?php echo nl2br($row['ap_description'])?>">
 </div>  
 <div class="footer">
     <a class="a" href="../">@AppsPages</a>
+
+    <!-- ShareThis BEGIN --><div class="sharethis-inline-reaction-buttons"></div><!-- ShareThis END -->
+    
 </div>         
 </body>
 
