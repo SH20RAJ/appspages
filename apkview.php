@@ -119,8 +119,9 @@ content="<?php echo nl2br($row['ap_description'])?>">
     <a class="a" href="../">@AppsPages</a>
 
     <!-- ShareThis BEGIN --><div class="sharethis-inline-reaction-buttons"></div><!-- ShareThis END -->
-    
-</div>         
+
+</div>      
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=619204ca557e30001202fd90&product=sop' async='async'></script>   
 </body>
 
 </html>
