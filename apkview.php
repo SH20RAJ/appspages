@@ -28,6 +28,9 @@ mysqli_query($conn,$viewsql);
     <link rel="shortcut icon" href="<?php echo $row['ap_logo_url'] ?>" type="image/x-icon">
     <meta name="description" 
 content="<?php echo nl2br($row['ap_description'])?>">
+<meta property="og:title" content="<?php echo $row['ap_name'] ?>" />
+<meta property="og:description" content="<?php echo nl2br($row['ap_description'])?>" />
+<meta property="og:image" content="<?php echo $row['ap_featured'] ?>" />
     
 </head>
 
