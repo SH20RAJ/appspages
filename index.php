@@ -38,8 +38,8 @@ if (mysqli_num_rows($result) > 0) {
     while($row = $result->fetch_array()) {
       echo '
 
-<div class="col-sm-4" style="text-align:center;">
-<div class="card" style="max-width: 18rem;min-width: 18rem;text-align:center;">
+<div class="col-sm-4">
+<div class="card" style="max-width: 18rem;min-width: 18rem;>
   <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
   <div class="card-body">
     <h5 class="card-title">'.$row['ap_name'].'</h5>
@@ -59,7 +59,7 @@ if (mysqli_num_rows($result) > 0) {
 ?>
         
     </section>
-    <section class="recent" style="text-align:center;"><br>
+    <section class="recent"><br>
       <h5>Recent Apps by Users Globally</h5><hr><br>
             
     <?php
