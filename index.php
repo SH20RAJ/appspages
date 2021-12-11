@@ -39,7 +39,7 @@ if (mysqli_num_rows($result) > 0) {
       echo '
 
 <div class="col-sm-4" style="text-align:center;">
-<div class="card" style="max-width: 18rem;min-width: 18rem;">
+<div class="card" style="max-width: 18rem;min-width: 18rem;text-align:center;">
   <img class="card-img-top" src="'.$row['ap_featured'].'" alt="'.$row['ap_name'].'">
   <div class="card-body">
     <h5 class="card-title">'.$row['ap_name'].'</h5>
