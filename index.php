@@ -17,7 +17,7 @@ include "conn.php";
 </head>
 <body>
   <script src="assets/autotopbar.js"></script>
-<div class="container">
+<div class="container" style="text-align:center;">
     <header>
         <?php include "assets/header.php" ?>
         <script src='assets/jquery.min.js'></script>
