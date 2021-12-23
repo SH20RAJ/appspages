@@ -99,7 +99,7 @@ content="<?php echo nl2br($row['ap_description'])?>">
             <img src="<?php echo $row['ap_featured']?>" alt="" srcset="">
         </div>
 
-        <div class="collapse" id="desc">
+        <div class="collapsed" id="desc">
             <div class="card card-body">
 
                 <div class="description">
@@ -111,7 +111,7 @@ content="<?php echo nl2br($row['ap_description'])?>">
 
 
                 <br><br>
-                <div class="screenshots collapse card card-body" id="ss">
+                <div class="screenshots collapsed card card-body" id="ss">
                     
                     <pre class="sscon"><?php $sc = explode('|', $row['ap_screenshots']);for($x = 0; $x < count($sc); $x++) {echo "<img class='screenshot' src='".$sc[$x]."'>";}?>
                     </pre>
