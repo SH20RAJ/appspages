@@ -189,12 +189,19 @@ text-decoration:none;
     border-color: #485563;
   }
 }
+img, svg {
+    vertical-align: middle;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 </style>
 <body>
+<img src="https://avatars.dicebear.com/api/adventurer/<?php echo $id;?>.png"/>';
 
 
 <div class="container">
-<img src="https://avatars.dicebear.com/api/adventurer/<?php echo $id;?>.png"/>';
 <br>
    <div class="btn">
       <a href="https://bit.ly/insta-shr
